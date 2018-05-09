@@ -1,0 +1,25 @@
+<!doctype>
+<html>
+  <head>
+      <title>Gamification for Cyber Security</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}"><!-- python looks for static files in the static folder -->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">LHF Web App</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('home') }}">Home</a></li> <!-- triggers home() function -->
+            <li><a href="{{ url_for('launch') }}">Launch</a></li> <!-- triggers about() function -->
+            <li><a href="{{ url_for('deploy') }}">Deploy</a></li> <!-- triggers about() function -->
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+        {%block content%}<!-- call content  within block from html files which extend (this) layout.html file -->
+        {%endblock%}
+    </div>
+  </body>
+</html>

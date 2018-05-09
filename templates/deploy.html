@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="home">
+    <h2>LHF Setup</h2>
+    <p><strong>To set up local or remote environment on Linux Ubuntu:</strong></p>
+    <p>Docker must be installed https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository </p>
+    <p><strong>Commands to run:</strong></p>
+    <p>docker run -d -p 80:80 itbstudent1/lhf-http</p>
+    <p>docker run -d -p 21:21 itbstudent1/lhf-ftp</p>
+    <p>** FTP service may require port opening on firewall for remote deployment **</p>
+    <p>iptables -A INPUT -p icmp --icmp-type echo-request -j REJECT</p>
+	<p><strong>To run the LHF Webapp container local or remote:</strong></p>
+	<p>docker run -d -p 80:80 itbstudent1/lhf-webapp</p>
+	<p>** change host port if in use e.g. -p 8001:80 **</p>
+    <p><strong>Thats it!</strong></p>
+
+{% endblock %}

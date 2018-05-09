@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="home">
+    <h2>LHF Platform</h2>
+	<p>To play ping. <strong>35.231.171.166</strong>
+  <p>"Destination port unreachable" huh?</p>
+  <p>You've already started the game! Click <strong>Launch</strong></p>
+
+    <h2>Scoreboard</h2>
+    <p><strong> {{ msg }} </strong></p>
+    <p><strong>{{ no_db }} <strong></p>
+    <table class="center">
+
+      <tr>
+        <th>Name</td>
+        <th>Score</td>
+      </tr>
+
+      {% for key, value in rows %}
+      <tr>
+        <th> {{ key.upper() }} </th>
+        <th> {{ value }} </th>
+      </tr>
+      {% endfor %}
+    </table>
+</div>
+{% endblock %}
